@@ -1,0 +1,73 @@
+.app {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 412px;
+  height: 892px;
+  margin: 5vh auto;
+  padding: 10px 15px;
+  border-radius: 18px;
+  border: 8px solid rgba(43, 80, 120, 0.50);
+  background: #101F2D;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: 0.14px;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 32px;
+  }
+
+  &__content {
+    flex: 1;
+    border-radius: 10px;
+    overflow: auto;
+
+    &::-webkit-scrollbar {
+      width: 0;
+    }
+  }
+
+  &__bottom {
+    position: relative;
+    height: 28px;
+
+    &:before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      margin: auto;
+      width: 72px;
+      height: 2px;
+      background: #fff;
+      border-radius: 8px;
+    }
+  }
+
+  &__status {
+    display: flex;
+    gap: 5px;
+  }
+
+  &__wifi {
+    width: 17px;
+    height: 17px;
+    background: url("../../assets/icons/wifi.svg") no-repeat;
+  }
+
+  &__signal {
+    width: 17px;
+    height: 17px;
+    background: url("../../assets/icons/signal.svg") no-repeat;
+  }
+
+  &__battery {
+    width: 17px;
+    height: 15px;
+    background: url("../../assets/icons/battery.svg") no-repeat center;
+  }
+}

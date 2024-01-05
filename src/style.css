@@ -1,0 +1,14 @@
+body {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+  padding: 0 15px;
+  min-width: 350px;
+  overflow-x: hidden;
+}
+
+html, * {
+  font-family: 'Montserrat', sans-serif;
+  box-sizing: border-box;
+}
+
