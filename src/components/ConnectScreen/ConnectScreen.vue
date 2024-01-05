@@ -36,10 +36,9 @@ const onDisconnect = () => {
         </div>
         <div v-else class="connect-screen__content">
             <button type="button" class="connect-screen__main-btn" @click.prevent.stop="onConnect();">connect</button>
-            <div class="connect-screen__time-box"></div>
         </div>
         <div class="connect-screen__bottom">
-            <div class="connect-screen__info">
+            <div class="connect-screen__info" v-if="connect">
                 <InfoTile type="downloaded" />
                 <InfoTile type="uploaded" />
             </div>

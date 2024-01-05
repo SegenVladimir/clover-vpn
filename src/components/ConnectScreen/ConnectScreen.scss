@@ -15,6 +15,10 @@
   }
 
   &__content {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    min-height: 322px;
     text-align: center;
   }
 
@@ -59,14 +63,16 @@
   }
 
   &__main-btn {
-    position: relative;
-    flex-shrink: 0;
+    position: absolute;
+    top: 30%;
+    left: 0;
+    right: 0;
+    margin: auto;
     width: 174px;
     height: 174px;
     background: rgba(16, 31, 45, 0.9);
     border: 8px solid #c4d9f0;
     border-radius: 50%;
-    margin: 30px 0;
     font-size: 0;
     cursor: pointer;
 
