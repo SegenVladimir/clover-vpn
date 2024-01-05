@@ -6,7 +6,7 @@ const props = defineProps({
     type: 'uploaded' | 'downloaded',
 });
 
-const speedConnect = ref({download: 0, upload: 0});
+const speedConnect = ref({download: '-', upload: '-'});
 
 checkSpeedConnection().then((e) => {
     speedConnect.value = e;
