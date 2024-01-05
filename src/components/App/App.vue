@@ -2,8 +2,14 @@
 import {ref} from "vue";
 import LoadScreen from '../LoadScreen/LoadScreen.vue'
 import ConnectScreen from "../ConnectScreen/ConnectScreen.vue";
+import {getTime} from "../../utils.js";
 
 const connect = ref(false);
+const currentTime = ref(getTime(new Date()));
+
+setInterval(() => {
+    currentTime.value = getTime(new Date());
+}, 1000);
 </script>
 <style lang="scss">
 @import "App";
@@ -11,7 +17,7 @@ const connect = ref(false);
 <template>
   <div class="app" :class="connect ? 'connect' : 'disconnect'">
       <div class="app__header">
-          <div class="app__time">18:00</div>
+          <div class="app__time">{{currentTime}}</div>
           <div class="app__status">
               <div class="app__wifi"></div>
               <div class="app__signal"></div>
