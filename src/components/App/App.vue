@@ -6,7 +6,7 @@ import ConnectScreen from "../ConnectScreen/ConnectScreen.vue";
 @import "App";
 </style>
 <template>
-  <div class="app">
+  <div class="app connect">
       <div class="app__header">
           <div class="app__time">18:00</div>
           <div class="app__status">
@@ -19,6 +19,10 @@ import ConnectScreen from "../ConnectScreen/ConnectScreen.vue";
 <!--          <LoadScreen />-->
         <ConnectScreen />
       </div>
+
+
+
+
       <div class="app__bottom"></div>
   </div>
 </template>

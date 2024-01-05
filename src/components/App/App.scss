@@ -7,13 +7,21 @@
   margin: 5vh auto;
   padding: 10px 15px;
   border-radius: 18px;
-  border: 8px solid rgba(43, 80, 120, 0.50);
-  background: #101F2D;
+  border: 8px solid #889aae;
+  background-color: #101F2D;
   color: #fff;
   font-size: 14px;
   font-weight: 500;
   line-height: 20px;
   letter-spacing: 0.14px;
+
+  &.disconnect {
+    background-image: url("../../assets/bg/default.svg");
+  }
+
+  &.connect {
+    background-image: url("../../assets/bg/connect.svg");
+  }
 
   &__header {
     display: flex;
