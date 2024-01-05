@@ -4,8 +4,8 @@ body {
   margin: 0;
   box-sizing: border-box;
   font-family: 'Inter', sans-serif;
-  padding: 0 15px;
   min-width: 350px;
+  min-height: 892px;
   overflow-x: hidden;
 }
 

@@ -77,8 +77,21 @@
       margin: auto;
       width: 54px;
       height: 54px;
-      background: url("../../assets/icons/power.svg") no-repeat center;
+      background: url("../../assets/icons/power.svg");
     }
+
+    &.disconnect {
+      &:before {
+        width: 42px;
+        height: 42px;
+        border-radius: 8px;
+        background: #c4d9f0;
+      }
+    }
+  }
+
+  &__time-box {
+    height: 58px;
   }
 
   &__time {

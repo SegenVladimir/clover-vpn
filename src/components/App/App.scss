@@ -14,6 +14,7 @@
   font-weight: 500;
   line-height: 20px;
   letter-spacing: 0.14px;
+  transition: background-image 1s linear;
 
   &.disconnect {
     background-image: url("../../assets/bg/default.svg");

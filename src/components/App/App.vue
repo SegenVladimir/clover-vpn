@@ -1,12 +1,15 @@
 <script setup>
+import {ref} from "vue";
 import LoadScreen from '../LoadScreen/LoadScreen.vue'
 import ConnectScreen from "../ConnectScreen/ConnectScreen.vue";
+
+const connect = ref(false);
 </script>
 <style lang="scss">
 @import "App";
 </style>
 <template>
-  <div class="app connect">
+  <div class="app" :class="connect ? 'connect' : 'disconnect'">
       <div class="app__header">
           <div class="app__time">18:00</div>
           <div class="app__status">
@@ -17,12 +20,8 @@ import ConnectScreen from "../ConnectScreen/ConnectScreen.vue";
       </div>
       <div class="app__content">
 <!--          <LoadScreen />-->
-        <ConnectScreen />
+        <ConnectScreen @connectStatus="(e) => {connect = e;}"/>
       </div>
-
-
-
-
       <div class="app__bottom"></div>
   </div>
 </template>
