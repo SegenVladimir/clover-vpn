@@ -1,0 +1,100 @@
+.connect-screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  padding-bottom: 40px;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 16px 0;
+  }
+
+  &__content {
+    text-align: center;
+  }
+
+  &__bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    width: 100%;
+  }
+
+  &__info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 29px;
+    width: 100%;
+  }
+
+  &__logo {
+    width: 32px;
+    height: 32px;
+    background-image: url("/logo.svg");
+    background-size: cover;
+  }
+
+  &__setting-btn {
+    border: none;
+    outline: none;
+    width: 30px;
+    height: 30px;
+    background: url("../../assets/icons/settings.svg") no-repeat center;
+    font-size: 0;
+  }
+
+  &__profile-btn {
+    border: none;
+    outline: none;
+    width: 30px;
+    height: 30px;
+    background: url("../../assets/icons/user.svg") no-repeat center;
+    font-size: 0;
+  }
+
+  &__main-btn {
+    position: relative;
+    flex-shrink: 0;
+    width: 174px;
+    height: 174px;
+    background: rgba(16, 31, 45, 0.9);
+    border: 8px solid #c4d9f0;
+    border-radius: 50%;
+    margin: 30px 0;
+    font-size: 0;
+    cursor: pointer;
+
+    &:before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      margin: auto;
+      width: 54px;
+      height: 54px;
+      background: url("../../assets/icons/power.svg") no-repeat center;
+    }
+  }
+
+  &__time {
+    color: #E2E2E6;
+    font-size: 28px;
+    line-height: 36px;
+    font-weight: 500;
+    margin-bottom: 2px;
+  }
+
+  &__status {
+    color: #C2C7CF;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.25px;
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+}

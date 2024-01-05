@@ -1,0 +1,40 @@
+.info-tile {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  &:last-child {
+    margin-right: 8px;
+  }
+
+  &__title {
+    color: #E2E2E6;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 0.4px;
+    font-weight: 600;
+  }
+
+  &__description {
+    color: #C2C7CF;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.4px;
+    font-weight: 500;
+    opacity: 0.8;
+  }
+
+  &__arrow-down {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    background: url("../../assets/icons/arrow-down.svg") no-repeat center;
+  }
+
+  &__arrow-up {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    background: url("../../assets/icons/arrow-up.svg") no-repeat center;
+  }
+}

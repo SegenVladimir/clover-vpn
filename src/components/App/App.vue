@@ -1,5 +1,6 @@
 <script setup>
 import LoadScreen from '../LoadScreen/LoadScreen.vue'
+import ConnectScreen from "../ConnectScreen/ConnectScreen.vue";
 </script>
 <style lang="scss">
 @import "App";
@@ -15,7 +16,8 @@ import LoadScreen from '../LoadScreen/LoadScreen.vue'
           </div>
       </div>
       <div class="app__content">
-          <LoadScreen />
+<!--          <LoadScreen />-->
+        <ConnectScreen />
       </div>
       <div class="app__bottom"></div>
   </div>
