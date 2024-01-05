@@ -1,7 +1,8 @@
 <script setup>
+import {ref} from "vue";
 import CountrySelect from "../CountrySelect/CountrySelect.vue";
 import InfoTile from "../InfoTile/InfoTile.vue";
-import {ref} from "vue";
+import Stopwatch from "../Stopwatch/Stopwatch.vue";
 
 const emit = defineEmits(['connectStatus']);
 const connect = ref(false);
@@ -15,7 +16,6 @@ const onDisconnect = () => {
     emit('connectStatus', false);
     connect.value = false;
 }
-
 </script>
 <style lang="scss">
 @import "ConnectScreen";
@@ -30,7 +30,7 @@ const onDisconnect = () => {
         <div v-if="connect" class="connect-screen__content">
             <button type="button" class="connect-screen__main-btn disconnect" @click.prevent.stop="onDisconnect();">disconnect</button>
             <div class="connect-screen__time-box">
-                <div class="connect-screen__time">00:17</div>
+                <div class="connect-screen__time"><Stopwatch/></div>
                 <div class="connect-screen__status">Connected</div>
             </div>
         </div>
