@@ -4,11 +4,14 @@ import LoadScreen from '../LoadScreen/LoadScreen.vue'
 import ConnectScreen from "../ConnectScreen/ConnectScreen.vue";
 import {getTime} from "../../utils.js";
 import GetPremium from "../GetPremium/GetPremium.vue";
+import ChoiceLocation from "../ChoiceLocation/ChoiceLocation.vue";
 
 const loading = ref(true);
 const connect = ref(false);
 const currentTime = ref(getTime(new Date()));
 const openGetPremium = ref(false);
+const openChoiceLocation = ref(false);
+const selectedLocation = ref('Japan');
 
 setInterval(() => {
     currentTime.value = getTime(new Date());
@@ -21,7 +24,6 @@ onMounted(() => {
         }, 1000)
     });
 });
-
 </script>
 <style lang="scss">
 @import "App";
@@ -39,12 +41,24 @@ onMounted(() => {
         <div class="app__content">
             <Transition>
                 <LoadScreen v-if="loading" />
-                <ConnectScreen v-else @connectStatus="(e) => {connect = e;}" @openGetPremium="(e)=> {openGetPremium = e;}"/>
+                <ConnectScreen
+                    v-else
+                    @connectStatus="(e) => {connect = e;}"
+                    @openGetPremium="(e)=> {openGetPremium = e;}"
+                    @openChoiceLocation="(e)=> {openChoiceLocation = e;}"
+                    :selectedLocation="selectedLocation"/>
             </Transition>
         </div>
         <div class="app__bottom"></div>
-        <Transition class="app__get-premium">
+        <Transition class="app__modal">
             <GetPremium v-if="openGetPremium" @openGetPremium="(e)=> {openGetPremium = e;}"/>
+        </Transition>
+        <Transition class="app__modal">
+            <ChoiceLocation
+                v-if="openChoiceLocation"
+                :selectedLocation="selectedLocation"
+                @selectedLocation="(e) => {selectedLocation = e}"
+                @openChoiceLocation="(e)=> {openChoiceLocation = e;}"/>
         </Transition>
     </div>
 </template>

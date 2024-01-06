@@ -3,8 +3,12 @@ import {onMounted, ref} from "vue";
 import CountrySelect from "../CountrySelect/CountrySelect.vue";
 import InfoTile from "../InfoTile/InfoTile.vue";
 import Stopwatch from "../Stopwatch/Stopwatch.vue";
+import ChoiceLocation from "../ChoiceLocation/ChoiceLocation.vue";
 
-const emit = defineEmits(['connectStatus', 'openGetPremium']);
+const props = defineProps({
+    selectedLocation: String
+});
+const emit = defineEmits(['connectStatus', 'openGetPremium', 'openChoiceLocation']);
 const connect = ref(false);
 
 const onConnect = () => {
@@ -38,8 +42,6 @@ const onDisconnect = () => {
         <div v-else class="connect-screen__content">
             <button type="button" class="connect-screen__main-btn" @click.prevent.stop="onConnect();">connect</button>
         </div>
-
-
         <div class="connect-screen__bottom">
             <Transition class="connect-screen__selected">
                 <div v-if="connect" class="connect-screen__info">
@@ -47,9 +49,9 @@ const onDisconnect = () => {
                     <InfoTile type="uploaded" />
                 </div>
 
-                <CountrySelect v-else />
+                <CountrySelect v-else :name="props.selectedLocation" @click.prevent.stop="emit('openChoiceLocation', true);"/>
             </Transition>
         </div>
-
     </div>
+
 </template>

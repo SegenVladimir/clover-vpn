@@ -10,9 +10,14 @@
   cursor: pointer;
 
   &__flag {
+    display: flex;
     flex-shrink: 0;
     width: 32px;
     height: 32px;
+
+    img {
+      width: 100%;
+    }
   }
 
   &__content {

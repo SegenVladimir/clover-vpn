@@ -38,3 +38,10 @@ export const checkSpeedConnection = async () => {
     return await startTest();
 }
 
+export const getIconUrl = (name) => {
+    return new URL(`./assets/country/${name.toLowerCase()}.svg`, import.meta.url).href
+}
+
+export const randomInt = (min, max) => { // min and max included
+    return Math.floor(Math.random() * (max - min + 1) + min)
+}

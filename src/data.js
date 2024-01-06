@@ -16,3 +16,9 @@ export const tariffs = [
         price: '7,99'
     }
 ];
+
+export const locations = {
+    auto: ['Japan'],
+    recent: ['Canada', 'Austria', 'Thailand'],
+    all: ['United-States', 'Australia', 'Bangladesh', 'China', 'Laos', 'Monaco', 'Nepal', 'Peru', 'Switzerland', 'Hong-Kong', 'United-Kingdom', 'Vietnam', 'Venezuela']
+};
