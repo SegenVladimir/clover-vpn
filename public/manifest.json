@@ -1,0 +1,25 @@
+{
+  "short_name": "Clover",
+  "name": "Clover VPN",
+  "description": "This application does not connect to the server!",
+  "icons": [
+    {
+      "src": "logo-app.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    },
+    {
+      "src": "logo-app.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    }
+  ],
+  "id": "./",
+  "start_url": "./",
+  "background_color": "#101f2d",
+  "display": "minimal-ui",
+  "scope": "./",
+  "theme_color": "#101f2d",
+  "orientation": "portrait"
+}
