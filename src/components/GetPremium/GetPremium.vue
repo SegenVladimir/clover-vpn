@@ -14,6 +14,7 @@ const tariffs = [
     {
         id: 2,
         name: '6 months',
+        tag: true,
         price: '5,99'
     },
     {
@@ -48,6 +49,7 @@ const tariffs = [
                      class="tariff"
                      :class="{active: selectedTariff === tariff.id}"
                      @click="selectedTariff = tariff.id">
+                        <div v-if="tariff.tag" class="tariff__tag">saving 40%</div>
                         <div class="tariff__name">{{tariff.name}}</div>
                         <div class="tariff__price"><sup>$</sup>{{tariff.price}}</div>
                         <div class="tariff__period">per month</div>

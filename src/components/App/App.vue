@@ -31,6 +31,8 @@ setInterval(() => {
             <ConnectScreen @connectStatus="(e) => {connect = e;}" @openGetPremium="(e)=> {openGetPremium = e;}"/>
         </div>
         <div class="app__bottom"></div>
-        <GetPremium v-if="openGetPremium" @openGetPremium="(e)=> {openGetPremium = e;}"/>
+        <Transition class="app__get-premium">
+            <GetPremium v-if="openGetPremium" @openGetPremium="(e)=> {openGetPremium = e;}"/>
+        </Transition>
     </div>
 </template>

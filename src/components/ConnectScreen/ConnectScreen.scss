@@ -4,7 +4,6 @@
   justify-content: space-between;
   align-items: center;
   height: 100%;
-  padding-bottom: 40px;
 
   &__header {
     position: relative;
@@ -19,8 +18,7 @@
   &__content {
     display: flex;
     justify-content: center;
-    align-items: flex-end;
-    min-height: 322px;
+    padding-top: 30px;
     text-align: center;
   }
 
@@ -120,4 +118,24 @@
     font-weight: 500;
     text-transform: uppercase;
   }
+
+  &__selected {
+    position: absolute;
+    width: calc(100% - 20px);
+    left: 0;
+    right: 0;
+    bottom: 60px;
+    margin: auto;
+
+    &.v-enter-active,
+    &.v-leave-active {
+      transition: bottom 0.5s ease;
+    }
+
+    &.v-enter-from,
+    &.v-leave-to {
+      bottom: -100px;
+    }
+  }
 }
+

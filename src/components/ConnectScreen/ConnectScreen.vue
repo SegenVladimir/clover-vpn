@@ -27,6 +27,7 @@ const onDisconnect = () => {
             <span class="connect-screen__logo"></span>
             <button type="button" class="connect-screen__profile-btn" @click.prevent.stop="emit('openGetPremium', true);">profile</button>
         </div>
+
         <div v-if="connect" class="connect-screen__content">
             <button type="button" class="connect-screen__main-btn disconnect" @click.prevent.stop="onDisconnect();">disconnect</button>
             <div class="connect-screen__time-box">
@@ -37,13 +38,17 @@ const onDisconnect = () => {
         <div v-else class="connect-screen__content">
             <button type="button" class="connect-screen__main-btn" @click.prevent.stop="onConnect();">connect</button>
         </div>
-        <div class="connect-screen__bottom">
-            <div class="connect-screen__info" v-if="connect">
-                <InfoTile type="downloaded" />
-                <InfoTile type="uploaded" />
-            </div>
 
-            <CountrySelect />
+
+        <div class="connect-screen__bottom">
+            <Transition class="connect-screen__selected">
+                <div v-if="connect" class="connect-screen__info">
+                    <InfoTile type="downloaded" />
+                    <InfoTile type="uploaded" />
+                </div>
+
+                <CountrySelect v-else />
+            </Transition>
         </div>
 
     </div>
