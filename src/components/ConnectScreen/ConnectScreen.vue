@@ -1,9 +1,8 @@
 <script setup>
-import {onMounted, ref} from "vue";
+import {ref} from "vue";
 import CountrySelect from "../CountrySelect/CountrySelect.vue";
 import InfoTile from "../InfoTile/InfoTile.vue";
 import Stopwatch from "../Stopwatch/Stopwatch.vue";
-import ChoiceLocation from "../ChoiceLocation/ChoiceLocation.vue";
 
 const props = defineProps({
     selectedLocation: String

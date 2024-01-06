@@ -6,7 +6,7 @@ const props = defineProps({
     selectedLocation: String
 });
 const emit = defineEmits(['openChoiceLocation', 'selectedLocation']);
-const search = ref(null);
+const search = ref<HTMLElement | String>('');
 const searchActive = ref(false);
 
 
@@ -20,8 +20,6 @@ const onShowSearch = () => {
         }, 0);
     }
 };
-
-;
 </script>
 <style lang="scss">
 @import "ChoiceLocation";

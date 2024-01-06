@@ -2,8 +2,8 @@
 import {ref} from "vue";
 
 const props = defineProps({
-    second: Number | String,
-    minute: Number | String,
+    second: [Number, String],
+    minute: [Number, String],
 });
 
 const second = ref(props.second ?? '00');

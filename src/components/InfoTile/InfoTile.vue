@@ -3,7 +3,7 @@ import {checkSpeedConnection} from "../../utils.js";
 import {ref} from "vue";
 
 const props = defineProps({
-    type: 'uploaded' | 'downloaded',
+    type: String,
 });
 
 const speedConnect = ref({download: '-', upload: '-'});
