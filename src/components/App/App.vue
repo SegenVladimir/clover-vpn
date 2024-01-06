@@ -1,10 +1,11 @@
 <script setup>
-import {ref} from "vue";
+import {onMounted, ref} from "vue";
 import LoadScreen from '../LoadScreen/LoadScreen.vue'
 import ConnectScreen from "../ConnectScreen/ConnectScreen.vue";
 import {getTime} from "../../utils.js";
 import GetPremium from "../GetPremium/GetPremium.vue";
 
+const loading = ref(true);
 const connect = ref(false);
 const currentTime = ref(getTime(new Date()));
 const openGetPremium = ref(false);
@@ -12,6 +13,15 @@ const openGetPremium = ref(false);
 setInterval(() => {
     currentTime.value = getTime(new Date());
 }, 1000);
+
+onMounted(() => {
+    window.addEventListener('load', () => {
+        setTimeout(() => {
+            loading.value = false;
+        }, 1000)
+    });
+});
+
 </script>
 <style lang="scss">
 @import "App";
@@ -27,8 +37,10 @@ setInterval(() => {
             </div>
         </div>
         <div class="app__content">
-            <!--          <LoadScreen />-->
-            <ConnectScreen @connectStatus="(e) => {connect = e;}" @openGetPremium="(e)=> {openGetPremium = e;}"/>
+            <Transition>
+                <LoadScreen v-if="loading" />
+                <ConnectScreen v-else @connectStatus="(e) => {connect = e;}" @openGetPremium="(e)=> {openGetPremium = e;}"/>
+            </Transition>
         </div>
         <div class="app__bottom"></div>
         <Transition class="app__get-premium">

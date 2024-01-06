@@ -1,5 +1,5 @@
 <script setup>
-import {ref} from "vue";
+import {onMounted, ref} from "vue";
 import CountrySelect from "../CountrySelect/CountrySelect.vue";
 import InfoTile from "../InfoTile/InfoTile.vue";
 import Stopwatch from "../Stopwatch/Stopwatch.vue";
