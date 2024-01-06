@@ -29,6 +29,7 @@ onMounted(() => {
 @import "App";
 </style>
 <template>
+    <div class="info-description">Use a mobile device for fullscreen mode</div>
     <div class="app" :class="connect ? 'connect' : 'disconnect'">
         <div class="app__header">
             <div class="app__time">{{currentTime}}</div>

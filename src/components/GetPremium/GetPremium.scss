@@ -6,8 +6,9 @@
   width: 100%;
   height: 100%;
   background-image: url("../../assets/bg/getPremium.svg");
+  background-size: cover;
+  background-position: top;
   background-color: #101F2D;
-  border-radius: 18px;
   padding: 52px 15px 36px 15px;
   z-index: 10;
 
@@ -82,6 +83,10 @@
     text-transform: capitalize;
     text-align: center;
     cursor: pointer;
+  }
+
+  @media screen and (max-width: 768px) {
+    padding-top: 16px;
   }
 }
 
