@@ -1,29 +1,10 @@
 <script setup>
 import {ref} from "vue";
+import {tariffs} from "../../data.js";
 
 const emit = defineEmits(['openGetPremium']);
 
 const selectedTariff = ref(2);
-
-const tariffs = [
-    {
-        id: 1,
-        name: '1 months',
-        price: '9,99'
-    },
-    {
-        id: 2,
-        name: '6 months',
-        tag: true,
-        price: '5,99'
-    },
-    {
-        id: 3,
-        name: '3 months',
-        price: '7,99'
-    }
-];
-
 </script>
 <style lang="scss">
 @import "GetPremium";
