@@ -1,5 +1,28 @@
 <script setup>
+import {ref} from "vue";
+
 const emit = defineEmits(['openGetPremium']);
+
+const selectedTariff = ref(2);
+
+const tariffs = [
+    {
+        id: 1,
+        name: '1 months',
+        price: '9,99'
+    },
+    {
+        id: 2,
+        name: '6 months',
+        price: '5,99'
+    },
+    {
+        id: 3,
+        name: '3 months',
+        price: '7,99'
+    }
+];
+
 </script>
 <style lang="scss">
 @import "GetPremium";
@@ -21,21 +44,13 @@ const emit = defineEmits(['openGetPremium']);
             </div>
 
             <div class="tariff__row">
-                <div class="tariff">
-                    <div class="tariff__name">1 months</div>
-                    <div class="tariff__price"><sup>$</sup>9,99</div>
-                    <div class="tariff__period">per month</div>
-                </div>
-                <div class="tariff special">
-                    <span class="tariff__tag">saving 40%</span>
-                    <div class="tariff__name">6 months</div>
-                    <div class="tariff__price"><sup>$</sup>5,99</div>
-                    <div class="tariff__period">per month</div>
-                </div>
-                <div class="tariff">
-                    <div class="tariff__name">3 months</div>
-                    <div class="tariff__price"><sup>$</sup>7,99</div>
-                    <div class="tariff__period">per month</div>
+                <div v-for="tariff in tariffs"
+                     class="tariff"
+                     :class="{active: selectedTariff === tariff.id}"
+                     @click="selectedTariff = tariff.id">
+                        <div class="tariff__name">{{tariff.name}}</div>
+                        <div class="tariff__price"><sup>$</sup>{{tariff.price}}</div>
+                        <div class="tariff__period">per month</div>
                 </div>
             </div>
         </div>

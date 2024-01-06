@@ -66,6 +66,7 @@
     border: none;
     outline: none;
     font-size: 0;
+    cursor: pointer;
   }
 
   &__btn {
@@ -80,6 +81,7 @@
     font-weight: 500;
     text-transform: capitalize;
     text-align: center;
+    cursor: pointer;
   }
 }
 
@@ -87,12 +89,13 @@
   position: relative;
   width: 100%;
   border-radius: 12px;
-  border: 1.8px solid rgba(194, 199, 207, 0.70);
+  border: 2.5px solid rgba(194, 199, 207, 0.70);
   background: rgba(150, 203, 255, 0.13);
   padding: 18px 3px;
   text-align: center;
+  cursor: pointer;
 
-  &.special {
+  &.active {
     border-radius: 12px;
     border: 2.5px solid #96CBFF;
     background: rgba(16, 31, 45, 0.90);
